@@ -6,6 +6,8 @@ import Products from "./Components/products/Products";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import TopRated from "./Components/TopRated/TopRated";
+import Banner from "./Components/Banner/Banner";
+import Subscribe from "./Components/Subscribe/Subscribe";
 
 const App = () => {
   useEffect(() => {
@@ -23,6 +25,8 @@ const App = () => {
       <Landing />
       <Products />
       <TopRated />
+      <Banner />
+      <Subscribe />
     </div>
   );
 };
