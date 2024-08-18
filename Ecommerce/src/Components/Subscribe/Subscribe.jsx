@@ -10,7 +10,9 @@ function Subscribe() {
     width: "100%",
   };
   return (
-    <div className="bg-gray-100 dark:bg-gray-800 text-white">Subscribe</div>
+    <div className="bg-gray-100 dark:bg-gray-800 text-white" style={Bannerimg}>
+      Subscribe
+    </div>
   );
 }
 
