@@ -5,7 +5,7 @@ import img3 from "../../assets/young-woman-talking-with-telephone-while-holding-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-function Landing() {
+function Landing({ handleOrder }) {
   const images = [
     {
       id: 1,
@@ -50,7 +50,10 @@ function Landing() {
                   </h1>
                   <p className="text-sm">{data.des}</p>
                   <div className="">
-                    <button className=" bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 my-2 px-4 rounded-full">
+                    <button
+                      onClick={handleOrder}
+                      className=" bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 my-2 px-4 rounded-full"
+                    >
                       Order Now
                     </button>
                   </div>

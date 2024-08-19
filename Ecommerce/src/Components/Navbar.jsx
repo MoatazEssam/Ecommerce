@@ -4,8 +4,20 @@ import { GoSearch } from "react-icons/go";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 import DarkMode from "./DarkMode";
-
-const Navbar = () => {
+import Slider from "react-slick";
+const Navbar = ({ handleOrder }) => {
+  var settings = {
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    arrows: false,
+    speed: 800,
+    slidesToScroll: 1,
+    autoplaySpeed: 4000, // Corrected typo here
+    cssEase: "ease-in-out",
+    pauseOnHover: false,
+    pauseOnFocus: true,
+  };
   const menu = [
     {
       id: 1,
@@ -60,7 +72,7 @@ const Navbar = () => {
               className="font-bold text-2xl sm:text-3xl items-end flex gap-2"
             >
               <img src={logo} alt="logo" className="w-10 uppercase" />
-              Fa
+              Fa Fashon
             </a>
           </div>
           <div className="flex gap-4 items-center">
@@ -74,7 +86,7 @@ const Navbar = () => {
               <GoSearch className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3" />
             </div>
             <button
-              onClick={() => alert("Order")}
+              onClick={() => handleOrder()}
               className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 flex items-center justify-center gap-3 group text-white px-4 py-1 rounded-full"
             >
               <span className="group-hover:block hidden transition-all duration-600">
@@ -90,8 +102,8 @@ const Navbar = () => {
         </div>
       </div>
       {/* //////////////////// */}
-      <div className="flex justify-center">
-        <ul className="sm:flex hidden items-center gap-4">
+      <div data-aos="fade-down" className="flex justify-center">
+        <ul className="sm:flex flex  justify-center gap-2 flex-wrap items-center sm:gap-4">
           {menu.map((data) => (
             <li key={data.id}>
               <a
@@ -109,7 +121,7 @@ const Navbar = () => {
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
               </span>
             </a>
-            <div className="absolute hideen z-[100] shadow-lg hidden w-[200px] rounded-md bg-white p-2 text-black group-hover:block">
+            <div className="absolute  z-[100] shadow-lg hidden w-[200px] rounded-md bg-white p-2 text-black group-hover:block">
               <ul>
                 {dropdownmenu.map((data) => (
                   <li

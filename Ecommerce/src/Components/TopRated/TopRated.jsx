@@ -4,7 +4,7 @@ import Img2 from "../../assets/shirt2.png";
 import Img3 from "../../assets/shirt3.png";
 import { FaStar } from "react-icons/fa6";
 
-function TopRated() {
+function TopRated({ handleOrder }) {
   const ProductsData = [
     {
       id: 1,
@@ -34,16 +34,16 @@ function TopRated() {
         <div className="text-center mb-24 max-w-[600px] mx-auto">
           <h1
             data-aos="fade-up"
-            className="text-primary text-3xl mb-5 md:text-5xl font-bold"
+            className="text-primary text-3xl mb-9 md:text-5xl font-bold"
           >
             Top Rating Products
           </h1>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 gap-20 place-items-center">
           {ProductsData.map((product) => (
             <div
               data-aos="zoom-in"
-              className="rounded-2xl bg-gray-100 dark:bg-gray-900 hover:bg-black/80 dark:hover:bg-primary hover:text-white
+              className="rounded-2xl bg-gray-100 mt-10 dark:bg-gray-900 hover:bg-black/80 dark:hover:bg-primary hover:text-white
               relative shadow-xl duration-500 group max-w-[300px] "
               key={product.id}
             >
@@ -68,6 +68,7 @@ function TopRated() {
                   {product.description}
                 </p>
                 <button
+                  onClick={() => handleOrder()}
                   className="bg-primary hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4
                 group-hover:bg-white group-hover:text-primary"
                 >
